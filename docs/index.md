@@ -30,21 +30,24 @@ In previous assignments we worked with reading and writing data to a text file w
 
 In order to use pickling in the script I had to import Python’s pickle module.  The code to pickle and unpickle data to and from a file is almost the same as reading and writing to a text file.  Create a file object using the open() method and pass in the file name for the data file and the binary mode to open the file in, “wb” (write binary mode) in this case.  I then use the pickle module’s dump() method to write the final list generated in the script to a file by passing in the list and the file object.  Finally, the file object is closed.  The script then unpickles the file by, again, creating a file object using the same open() method but passing in “rb” (read binary mode) this time.  I use the pickle module’s load() method to unpickle the data in the file and assign it to a variable and then print it out (Figure 2).
 
-
-Figure 2: Pickling
+![Pickling](https://github.com/alexfrain/IntroToProg-Python-Mod07/blob/main/docs/Figure2.png "Pickling")  
+**Figure 2: Pickling**
 
 ## Running the Script
 I ran the script in both PyCharm and Windows command line confirming it worked successfully in both.  I entered a couple of items and their cost to confirm the expected input got added to dictionaries and, in turn, the dictionaries were added to a list.  I then tested the exception handling by first entering just numbers for the item name and received the custom error message along with Pythonic details for the general Exception class (Figure 3).  I then followed that up by entering an item name and then nonnumeric characters for the cost.  This raised the ValueError type exception and included the custom message which is also seen in Figure 3.
 
-Figure 3: Exception Handling
+![Exception Handling](https://github.com/alexfrain/IntroToProg-Python-Mod07/blob/main/docs/Figure3.png "Exception Handling")  
+**Figure 3: Exception Handling**
 
 I quit entering items to the list and confirmed the final list that included the list of dictionaries and the weekly total was pickled to the WeeklyTotal.dat file.  The file was then unpickled back into memory by the script and the data in the list is displayed (Figure 4). 
 
-Figure 4: Pickling/Unpickling
+![Pickling/Unpickling](https://github.com/alexfrain/IntroToProg-Python-Mod07/blob/main/docs/Figure4.png "Pickling/Unpickling")  
+**Figure 4: Pickling/Unpickling**
 
 Figure 5 shows the WeeklyTotal.dat file created by the script open in Notepad.
 
-Figure 5: WeeklyTotal.dat file created by script
+![WeeklyTotal.dat file created by script](https://github.com/alexfrain/IntroToProg-Python-Mod07/blob/main/docs/Figure5.png "WeeklyTotal.dat file created by script")  
+**Figure 5: WeeklyTotal.dat file created by script**
 
 ## Summary
 In this assignment our initial task was to further research the topics of exception handling and pickling.  I was able to find a number of useful sites that covered both areas but as a Python beginner I especially liked https://realpython.com/ and https://www.techbeamers.com/ for their presentation.  I then created a script that performed basic demonstrations of both exception handling and pickling.  Exception handling is important to include in scripts in order to handle errors that may occur while the program is running which would normally cause it to stop.  They also allow you to customize a more user friendly message to the user that a problem was encountered compared the message Python would present by default.  The script also demonstrated pickling which is a means to convert data (usually more complex data) to a byte stream that could then be reconstructed (unpickled) when needed.  Pickling and unpickling data to and from a file is accomplished almost the same was as reading and writing data from a text file but the script needs to first import the pickle module which contains the required methods to accomplish this.
